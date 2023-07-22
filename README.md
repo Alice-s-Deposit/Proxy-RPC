@@ -15,7 +15,7 @@ In an increasingly interconnected Blockchain ecosystem, it has become challengin
 - Hosted on [bacalhau](https://www.bacalhau.org/) <img src="https://pbs.twimg.com/media/FTNDJSrXwAE8jCz.jpg" width="20" height="20">
 
 ## **The concept** 💡
-When a user wants to withdraw funds from a centralized exchange, they can use our solution to ensure that their final receiving address is not linked to their physical identity. However, as soon as they use a public RPC (Remote Procedure Call), their address will be identified as belonging to them. This is where our proxy comes in handy: it makes the RPC call private using a container on bacalhau and hopr.
+When a user wants to withdraw funds from a centralized exchange, they can use our solution to ensure that their final receiving address is not linked to their physical identity. However, as soon as they use a public RPC (Remote Procedure Call) provided by a tier, their address will be identified as belonging to their IP. This is where Hopr RPCh comes in handy: it makes the RPC call private, this RPCh is deployed on bacalhau.
 
 
 ## **How we built it** 👨‍💻
