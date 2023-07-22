@@ -19,14 +19,14 @@ When a user wants to withdraw funds from a centralized exchange, they can use ou
 
 
 ## **How we built it** 👨‍💻
- L'api caller tourne dans un container docker et est initialisé par la commande:
+The API caller runs in a Docker container and is initialized with the following command:
 ```bash
 docker run -e RESPONSE_TIMEOUT=10000 -e DISCOVERY_PLATFORM_API_ENDPOINT=https://production.discovery.rpch.tech -e PORT=8080 -e DATA_DIR=app -e CLIENT=moon-science-statement-government-off --name rpc-server -p 8080:8080 --rm --pull=always europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server:latest
 ```
 
-Une fois que notre demande de whitelist pour le endpoint `https://production.discovery.rpch.tech` a du été acceptée par filecoin.
+Once our whitelist request for the https://production.discovery.rpch.tech endpoint has been added to the whitelist by Filecoin.
 
-La dernière étape consiste à lancer Bacalhau:
+The final step is to launch Bacalhau.
 ```bash
 bacalhau run command.sh
 ```
