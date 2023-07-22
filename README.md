@@ -15,7 +15,7 @@ In an increasingly interconnected Blockchain ecosystem, it has become challengin
 - Private RPCs based on the Hopr network 
 
 ## **The concept** 💡
-When a user want to 
+When a user wants to withdraw funds from a centralized exchange, they can use our solution to ensure that their final receiving address is not linked to their physical identity. However, as soon as they use a public RPC (Remote Procedure Call), their address will be identified as belonging to them. This is where our proxy comes in handy: it makes the RPC call private using a container on bacalhau and hopr.
 
 
 ## **How we built it** 👨‍💻
