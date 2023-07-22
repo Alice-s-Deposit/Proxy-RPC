@@ -11,8 +11,8 @@ In an increasingly interconnected Blockchain ecosystem, it has become challengin
 ## **Features** ✨
 
 -  A fully private and decentralized RPC caller 🌐
-- API caller built on bacalhau  
-- Private RPCs based on the Hopr network 
+- API caller built on [bacalhau](https://www.bacalhau.org/) <img src="https://pbs.twimg.com/media/FTNDJSrXwAE8jCz.jpg" width="20" height="20">
+- Private RPCs based on the [Hopr network](https://hoprnet.org/)   <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/6520.png"  height="20">
 
 ## **The concept** 💡
 When a user wants to withdraw funds from a centralized exchange, they can use our solution to ensure that their final receiving address is not linked to their physical identity. However, as soon as they use a public RPC (Remote Procedure Call), their address will be identified as belonging to them. This is where our proxy comes in handy: it makes the RPC call private using a container on bacalhau and hopr.
