@@ -23,7 +23,7 @@ The RPCh lives on Bacalhau, to launch the workload, run the command:
 ```bash
 bacalhau docker run -e RESPONSE_TIMEOUT=10000 -e DISCOVERY_PLATFORM_API_ENDPOINT=https://production.discovery.rpch.tech -e PORT=8080 -e DATA_DIR=app -e CLIENT=arrow-worried-little-of-private  europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server:latest
 ```
-You should buy able to connect to the RPC using this endpoint : http://<machineIP>:8080/?exit-provider=<providerOfYourChoice> 
+You should buy able to connect to the RPC using this endpoint : http://machineIP:8080/?exit-provider=providerOfYourChoice 
 
 ## A huge thanks to the Filecoin team to have accepted our whitelist request for the https://production.discovery.rpch.tech endpoint 
 
