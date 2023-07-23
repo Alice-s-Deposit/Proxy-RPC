@@ -15,29 +15,17 @@ In an increasingly interconnected Blockchain ecosystem, it has become challengin
 - Hosted on [bacalhau](https://www.bacalhau.org/) <img src="https://pbs.twimg.com/media/FTNDJSrXwAE8jCz.jpg" width="20" height="20">
 
 ## **The concept** 💡
-When a user wants to withdraw funds from a centralized exchange, they can use our solution to ensure that their final receiving address is not linked to their physical identity. However, as soon as they use a public RPC (Remote Procedure Call) provided by a tier, their address will be identified as belonging to their IP. This is where Hopr RPCh comes in handy: it makes the RPC call private, this RPCh is deployed on bacalhau.
+Our solution provides users of centralized exchanges with a way to withdraw funds while keeping their physical identity separate from the final receiving address. However, when a user employs a public RPC provided by a tier to make a transaction on a blockchain, let's say a ZKBOB direct deposit or a withdrawal, their address will be linked to the IP address making the request. This IP address is often the user's own, revealing their identity. This is where Hopr RPCh comes in: it effectively conceals the user's IP address from the RPC. Hopr RPCh is deployed on Bacalhau and is a valuable tool for maintaining user privacy.
 
 
 ## **How we built it** 👨‍💻
-The API caller runs in a Docker container and is initialized with the following command:
+The RPCh lives on Bacalhau, to launch the workload, run the command:
 ```bash
-docker run -e RESPONSE_TIMEOUT=10000 -e DISCOVERY_PLATFORM_API_ENDPOINT=https://production.discovery.rpch.tech -e PORT=8080 -e DATA_DIR=app -e CLIENT=moon-science-statement-government-off --name rpc-server -p 8080:8080 --rm --pull=always europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server:latest
+bacalhau docker run -e RESPONSE_TIMEOUT=10000 -e DISCOVERY_PLATFORM_API_ENDPOINT=https://production.discovery.rpch.tech -e PORT=8080 -e DATA_DIR=app -e CLIENT=arrow-worried-little-of-private  europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server:latest
 ```
+You should buy able to connect to the RPC using this endpoint : http://<machineIP>:8080/?exit-provider=<providerOfYourChoice> 
 
-Once our whitelist request for the https://production.discovery.rpch.tech endpoint has been added to the whitelist by Filecoin.
-
-The final step is to launch Bacalhau.
-```bash
-bacalhau run command.sh
-```
-
-command.sh :
-```bash
-docker run -e RESPONSE_TIMEOUT=10000 -e DISCOVERY_PLATFORM_API_ENDPOINT=https://production.discovery.rpch.tech -e PORT=8080 -e DATA_DIR=app -e CLIENT=moon-science-statement-government-off --name rpc-server -p 8080:8080 --rm --pull=always europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server:latest
-```
-
-The api should be up and running on port 8080 !
-
+## A huge thanks to the Filecoin team to have accepted our whitelist request for the https://production.discovery.rpch.tech endpoint 
 
 ## **The team** 🏆
 
